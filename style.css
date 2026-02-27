@@ -1,64 +1,173 @@
-body {
+/* إعدادات عامة */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    box-sizing: border-box;
 }
 
-#gameArea {
-    position: relative;
-    width: 300px;
-    height: 500px;
-    background-color: #222;
-    overflow: hidden;
-    border: 2px solid #fff;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    direction: rtl;
 }
 
-#background {
-    position: absolute;
+/* الهيدر والقائمة */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
     width: 100%;
-    height: 100%;
-    background: url('background.jpg') no-repeat center center;
-    background-size: cover;
-    z-index: -1; /* ���� ������� ��� ������� ������ */
+    top: 0;
+    z-index: 1000;
 }
 
-#player {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #00f;
-    bottom: 0;
-    left: 135px;
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#score {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: white;
-    font-size: 20px;
+.logo h1 {
+    font-size: 1.5rem;
 }
 
-.coin {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: gold;
-    border-radius: 50%;
-    top: -20px;
-    left: 50%;
-    animation: fall 2s infinite;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
-@keyframes fall {
-    0% {
-        top: -20px;
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* المحتوى الرئيسي */
+main {
+    margin-top: 70px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+/* بطاقات الخدمات */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* نموذج الاتصال */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* الأزرار */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* الفوتر */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* التجاوب مع الشاشات */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
     }
-    100% {
-        top: 500px; /* ���� ������ */
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
     }
 }

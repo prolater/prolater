@@ -1,18 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subway Game</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="موقع ويب بسيط باستخدام HTML5">
+    <title>موقعي - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="gameArea">
-        <div id="background"></div> <!-- ������� -->
-        <div id="player"></div>
-        <div id="score">Score: 0</div>
-        <div id="coins"></div> <!-- ����� -->
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>موقعي</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>مرحباً بك في موقعنا</h2>
+            <p>نقدم لك أفضل الخدمات والحلول</p>
+            <a href="#contact" class="btn">تواصل معنا</a>
+        </section>
+
+        <section id="about" class="section">
+            <h2>من نحن</h2>
+            <p>نحن فريق متخصص في تقديم حلول مبتكرة</p>
+        </section>
+
+        <section id="services" class="section">
+            <h2>خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>التصميم</h3>
+                    <p>تصميم عصري وجذاب</p>
+                </div>
+                <div class="service-card">
+                    <h3>التطوير</h3>
+                    <p>تطوير احترافي للمواقع</p>
+                </div>
+                <div class="service-card">
+                    <h3>الدعم</h3>
+                    <p>دعم فني مستمر</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>اتصل بنا</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="الاسم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea placeholder="رسالتك" rows="5" required></textarea>
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 جميع الحقوق محفوظة</p>
+    </footer>
 </body>
 </html>
